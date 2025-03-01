@@ -9,7 +9,8 @@ Route::get("language/{locale}", LanguageController::class)->name('language');
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('index');
+
 
 Route::resource('peliculas', PeliculaController::class);
 
@@ -20,11 +21,6 @@ Route::get('/peliculas/{peliculas}', [PeliculaController::class, 'show'])->name(
 Route::get('/peliculas/{peliculas}/edit', [PeliculaController::class, 'edit'])->name('peliculas.edit');
 Route::put('/peliculas/{peliculas}', [PeliculaController::class, 'update'])->name('peliculas.update');
 Route::delete('/peliculas/{peliculas}', [PeliculaController::class, 'destroy'])->name('peliculas.destroy');
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
 
 
 Route::middleware('auth')->group(function () {

@@ -39,7 +39,7 @@ class PeliculaController extends Controller
     /**
      * Guarda una nueva película en la base de datos
      */
-    public function store(Request $request) {
+    public function store(UpdatePeliculaRequest $request) {
         $pelicula = Pelicula::create($request->all());
     
         // Solo agregar actores si existen en la solicitud
