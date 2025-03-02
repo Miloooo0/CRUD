@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PeliculaController;
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\ActorController;
+
 
 Route::get("language/{locale}", LanguageController::class)->name('language');
 
@@ -21,6 +23,16 @@ Route::get('/peliculas/{peliculas}', [PeliculaController::class, 'show'])->name(
 Route::get('/peliculas/{peliculas}/edit', [PeliculaController::class, 'edit'])->name('peliculas.edit');
 Route::put('/peliculas/{peliculas}', [PeliculaController::class, 'update'])->name('peliculas.update');
 Route::delete('/peliculas/{peliculas}', [PeliculaController::class, 'destroy'])->name('peliculas.destroy');
+
+Route::resource('actores', ActorController::class);
+
+Route::get('/actores', [ActorController::class, 'index'])->name('actores.index');
+Route::post('/actores', [ActorController::class, 'store'])->name('actores.store');
+Route::get('/actores/create', [ActorController::class, 'create'])->name('actores.create');
+Route::get('/actores/{actores}', [ActorController::class, 'show'])->name('actores.show');
+Route::get('/actores/{actores}/edit', [ActorController::class, 'edit'])->name('actores.edit');
+Route::put('/actores/{actores}', [ActorController::class, 'update'])->name('actores.update');
+Route::delete('/actores/{actores}', [ActorController::class, 'destroy'])->name('actores.destroy');
 
 
 Route::middleware('auth')->group(function () {

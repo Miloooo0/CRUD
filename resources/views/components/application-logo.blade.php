@@ -1,4 +1,4 @@
-<svg onclick="location.href='/'" width="100px" height="100px" viewBox="0 0 500 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"{{ $attributes }}>
+<svg style="cursor:pointer" onclick="location.href='/'" width="100px" height="100px" viewBox="0 0 500 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"{{ $attributes }}>
     <title>letterboxd-decal-dots-neg-rgb</title>
     <desc>Created with Sketch.</desc>
     <defs>

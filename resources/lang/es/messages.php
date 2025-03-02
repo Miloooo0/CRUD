@@ -5,7 +5,7 @@ return [
     'login' => 'Iniciar sesión',
     'register' => 'Registrarse',
     'logout' => 'Cerrar sesión',
-    'hello' => 'Hola',
+    'hello' => 'Hola,',
     'sesion' => 'Has iniciado sesión!!',
     'languages' => 'Idiomas',
     'dashboard' => 'Perfil',
@@ -17,4 +17,5 @@ return [
     'discover' => 'Descubre',
     'available' => 'La red social para los amantes del cine. También disponible en ',
     'profile' => 'Perfil',
+    'title-peliculas' => 'Lista de Películas',
 ];

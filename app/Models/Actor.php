@@ -10,7 +10,8 @@ class Actor extends Model {
 
     protected $fillable = ['nombre', 'edad', 'fecha_nacimiento', 'pais'];
 
-    public function peliculas() {
+    public function peliculas()
+    {
         return $this->belongsToMany(Pelicula::class, 'actor_pelicula');
     }
 }

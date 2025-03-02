@@ -13,10 +13,11 @@ class PeliculaController extends Controller
     /**
      * Protege las rutas, excepto index y show
      */
-    public function __construct()
-    {
-        // $this->middleware('auth')->except(['index', 'show']);
-    }
+
+     public function __construct()
+     {
+         $this->middleware('auth')->except(['index']);
+     }
 
     /**
      * Muestra todas las películas
@@ -70,8 +71,8 @@ class PeliculaController extends Controller
     /**
      * Actualiza una película
      */
-    public function update(Request $request, Pelicula $pelicula) {
-        $pelicula->update($request->all());
+    public function update(UpdatePeliculaRequest $request, Pelicula $pelicula) {
+        $pelicula->update(attributes: $request->all());
     
         // Solo actualizar si se enviaron actores
         if ($request->has('actores')) {

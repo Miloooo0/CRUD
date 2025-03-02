@@ -1,77 +1,83 @@
 <style>
         body {
             font-family: Arial, sans-serif;
-            background-color:rgb(171, 91, 91);
-            padding: 0%;
-            margin: 0%;
+            background-color: #212121;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+        .container-table {
+            width: 80%;
+            background-color: #222;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            margin: 5vh;
+        }
+        h2 {
+            margin-bottom: 15px;
+            color: #fff;
         }
         table {
             width: 100%;
             border-collapse: collapse;
             border-radius: 10px;
+            overflow: hidden;
         }
         th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
+            padding: 12px;
             text-align: left;
         }
         th {
-            background-color: #f2f2f2;
+            background-color: #444;
+            color: #fff;
+            font-weight: bold;
         }
         tr:nth-child(even) {
-            background-color: #f9f9f9;
+            background-color: #333;
+        }
+        tr:nth-child(odd) {
+            background-color: #555;
         }
         tr:hover {
-            background-color: #f1f1f1;
-        }
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        button {
-            padding: 10px 15px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
+            background-color: #666;
         }
 
-        .container-table{
-            margin: 5vh 10vw;
-        }
-        .botones-tabla{
+        .botones-tabla {
             display: flex;
+            justify-content: center;
             gap: 10px;
-            align-content: center;
+        }
+        .botones-tabla button{
+            margin-bottom: 5vh;
         }
     </style>
+</head>
 <body>
     <x-global-components.nav/>
     <div class="container-table">
+    <h2>{{ __('messages.title-peliculas') }}</h2>
     <table>
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Director</th>
-                <th>Fecha Estreno</th>
-                <th>Duración</th>
-                <th>Género</th>
-                <th>País</th>
-                <th>Elenco</th>
-                <th>Acciones</th>
+                <th scope="col" class="px-6 py-3">{{ __('messages.titulo') }}</th>
+                <th scope="col" class="px-6 py-3">{{ __('messages.director') }}</th>
+                <th scope="col" class="px-6 py-3">{{ __('messages.reldate') }}</th>
+                <th scope="col" class="px-6 py-3">{{ __('messages.length') }}</th>
+                <th scope="col" class="px-6 py-3">{{ __('messages.genre') }}</th>
+                <th scope="col" class="px-6 py-3">{{ __('messages.country') }}</th>
+                <th scope="col" class="px-6 py-3">{{ __('messages.cast') }}</th>
+                <th scope="col" class="px-6 py-3">{{ __('messages.actions') }}</th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($peliculas as $pelicula): ?>
                 <tr>
-                    <td><?= $pelicula->id ?></td>
                     <td><?= $pelicula->nombre ?></td>
                     <td><?= $pelicula->director ?></td>
                     <td><?= \Carbon\Carbon::parse($pelicula->fecha)->format('d/m/Y') ?></td>
@@ -86,11 +92,11 @@
                         </ul>
                     </td>
                     <td>
-                        <a href="<?= route('peliculas.edit', $pelicula->id) ?>">Editar</a>
+                        <button onclick="location.href='{{ route('peliculas.edit', $pelicula->id) }}'">{{ __('messages.edit') }}</button>
                         <form action="<?= route('peliculas.destroy', $pelicula->id) ?>" method="POST" style="display:inline;">
                             <input type="hidden" name="_token" value="<?= csrf_token() ?>">
                             <input type="hidden" name="_method" value="DELETE">
-                            <button type="submit" onclick="return confirm('¿Estás seguro de eliminar esta película?')">Eliminar</button>
+                            <button type="submit" onclick="return confirm('{{ __('messages.confirmDel') }}')">{{ __('messages.delete') }}</button>
                         </form>
                     </td>
                 </tr>
@@ -100,7 +106,7 @@
     </div>
 
     <div class="botones-tabla">
-        <button onclick="location.href='{{ route('peliculas.create') }}'">Agregar película</button>
-        <button onclick="location.href='/'">Volver</button>
+        <button onclick="location.href='{{ route('peliculas.create') }}'">{{ __('messages.addfilm') }}</button>
+        <button onclick="location.href='/'">{{ __('messages.return') }}</button>
     </div>
 </body>

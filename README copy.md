@@ -4,3 +4,5 @@ php artisan make:controller LanguageController
 __('messages.hello'); SINTAXIS PARA IDIOMAS
 
 CREAR MIDDLEWARE Y AÑADIR A APP EL MIDDLEWARE PARA QUE SEA UNIVERSAL PASAR POR EL 
+
+
