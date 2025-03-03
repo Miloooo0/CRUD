@@ -107,7 +107,6 @@
 
     <div class="botones-tabla">
         <button onclick="location.href='{{ route('peliculas.create') }}'">{{ __('messages.addfilm') }}</button>
-        <button onclick="location.href='{{ route('peliculas.importView') }}'">import</button>
         <button onclick="location.href='/'">{{ __('messages.return') }}</button>
     </div>
 </body>

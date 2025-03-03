@@ -22,7 +22,7 @@ class UpdatePeliculaRequest extends FormRequest
             'genero'   => 'required|string|max:100',
             'idioma'   => ['required', 'string', 'max:255', Rule::in($this->paisesDisponibles())],
             'actores'  => 'required|array',
-            'actores.*' => 'exists:actores,id'
+            'actores.*' => 'exists:actors,id'
         ];
     }
 
