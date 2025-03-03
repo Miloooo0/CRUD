@@ -7,6 +7,7 @@ use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\ActorController;
 
 
+
 Route::get("language/{locale}", LanguageController::class)->name('language');
 
 Route::get('/', function () {
@@ -34,6 +35,10 @@ Route::get('/actores/{actores}/edit', [ActorController::class, 'edit'])->name('a
 Route::put('/actores/{actores}', [ActorController::class, 'update'])->name('actores.update');
 Route::delete('/actores/{actores}', [ActorController::class, 'destroy'])->name('actores.destroy');
 
+
+// importar
+Route::get('/peliculas/import', [PeliculaController::class, 'importView'])->name('peliculas.importView');
+Route::post('/peliculas/import', [PeliculaController::class, 'import'])->name('peliculas.import');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
