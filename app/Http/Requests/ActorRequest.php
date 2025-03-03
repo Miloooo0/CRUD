@@ -23,8 +23,8 @@ class ActorRequest extends FormRequest
                 'date',
                 function ($attribute, $value, $fail) {
                     $fecha = Carbon::parse($value);
-                    if ($fecha->year > 1900) {
-                        $fail('La fecha de nacimiento debe ser hasta el año 1900.');
+                    if ($fecha->year < 1900) {
+                        $fail('La fecha de nacimiento debe ser superior al año 1900.');
                     }
                 }
             ],
