@@ -7,6 +7,8 @@ use App\Models\Actor;
 use App\Models\Pelicula;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Validator;
+
 class ActorController extends Controller
 {
 
@@ -78,5 +80,5 @@ class ActorController extends Controller
 
         return redirect()->route('actores.index')->with('success', 'Actor eliminado correctamente.');
     }
-
 }
+

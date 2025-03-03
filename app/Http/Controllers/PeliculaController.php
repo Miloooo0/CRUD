@@ -7,6 +7,7 @@ use App\Models\Actor;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\UpdatePeliculaRequest;
+use Illuminate\Support\Facades\Validator;
 
 class PeliculaController extends Controller
 {
@@ -89,4 +90,37 @@ class PeliculaController extends Controller
         $pelicula->delete();
         return redirect()->route('peliculas.index')->with('success', 'Película eliminada correctamente.');
     }
+
+    public function import(Request $request)
+    {
+        try {
+            // Validar si se subió un archivo
+            if (!$request->hasFile('jsonFile')) {
+                return back()->with('error', 'No se ha seleccionado ningún archivo.');
+            }
+    
+            $file = $request->file('jsonFile');
+            $data = json_decode(file_get_contents($file), true);
+    
+            if ($data === null) {
+                return back()->with('error', 'El archivo JSON no es válido.');
+            }
+    
+            // Procesar cada película
+            foreach ($data as $item) {
+                Pelicula::create([
+                    'nombre' => $item['nombre'],
+                    'director' => $item['director'],
+                    'fecha' => $item['fecha'],
+                    'duracion' => $item['duracion'],
+                    'genero' => $item['genero'],
+                    'idioma' => $item['idioma'],
+                ]);
+            }
+    
+            return back()->with('success', 'Películas importadas correctamente.');
+        } catch (\Exception $e) {
+            return back()->with('error', 'Error al importar alguno o todos los elementos');
+        }
+    }    
 }

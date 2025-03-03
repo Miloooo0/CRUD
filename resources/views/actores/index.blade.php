@@ -1,8 +1,3 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Lista de Actores</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -60,10 +55,87 @@
         .botones-tabla button{
             margin-bottom: 5vh;
         }
+                
+        .divimportar {
+            background-color: #212121;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            margin: auto;
+            color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            gap: 10px;
+
+        }
+        .divimportar form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            gap: 10px;
+        }
+        .lab{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            gap: 10px;
+        }
+        .divimportar .textImp {
+            color: #f5f5f5;
+            font-weight: bold;
+        }
+
+        .divimportar .fileImp {
+            background-color: #333;
+            color: #fff;
+            border: 1px solid #444;
+            padding: 8px;
+            border-radius: 12px;
+        }
+
+        .divimportar .fileImp:focus {
+            background-color: #444;
+            border-color: #6200ea;
+            outline: none;
+            box-shadow: 0px 0px 5px rgba(152, 152, 152, 0.6);
+        }
+
+        .divimportar .btn-primary {
+            background-color:rgb(142, 142, 142);
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 200px;
+        }
+
+        .divimportar .btn-primary:hover {
+            background-color:#000000;
+        }
+
     </style>
-</head>
 <body>
     <x-global-components.nav/>
+    @if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
+@if (session('error'))
+    <div class="alert alert-danger">
+        {!! session('error') !!}
+    </div>
+@endif
+
     <div class="container-table">
         <h2>{{ __('messages.title-actors') }}</h2>
         <table>
@@ -110,5 +182,14 @@
         <button onclick="location.href='{{ route('actores.create') }}'">{{ __('messages.addactor') }}</button>
         <button onclick="location.href='/'">{{ __('messages.return') }}</button>
     </div>
+    <!-- <div class="divimportar">
+        <form action="{{ route('actores.import') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="lab">
+                <label for="jsonFileActors" class="textoImp">{{ __('messages.impjson') }}</label>
+                <input type="file" name="jsonFile" class="fileImp" required>
+            </div>
+            <button type="submit" class="btn btn-primary">{{ __('messages.impactors') }}</button>
+        </form>
+    </div> -->
 </body>
-</html>

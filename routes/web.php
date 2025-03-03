@@ -14,6 +14,10 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 
+Route::post('/actores/import', [ActorController::class, 'import'])->name('actores.import');
+Route::post('/peliculas/import', [PeliculaController::class, 'import'])->name('peliculas.import');
+
+
 
 Route::resource('peliculas', PeliculaController::class);
 

@@ -45,4 +45,7 @@ return [
     'es' => 'Spanish',
     'en' => 'English',
     'fr' => 'French',
+    'impactors'=> 'Import actors',
+    'impjson'=> 'Import from a JSON file',
+    'impmovies'=> 'Import movies',
 ];
