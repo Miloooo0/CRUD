@@ -29,34 +29,34 @@ class UpdatePeliculaRequest extends FormRequest
     public function messages()
     {
         return [
-            'nombre.required'   => 'El nombre de la película es obligatorio.',
-            'nombre.string'     => 'El nombre debe ser una cadena de texto.',
-            'nombre.max'        => 'El nombre no debe superar los 255 caracteres.',
-
-            'director.required' => 'El director es obligatorio.',
-            'director.string'   => 'El nombre del director debe ser una cadena de texto.',
-            'director.max'      => 'El nombre del director no debe superar los 255 caracteres.',
-
-            'fecha.required'    => 'La fecha de estreno es obligatoria.',
-            'fecha.date'        => 'La fecha de estreno debe ser una fecha válida.',
-
-            'duracion.required' => 'La duración de la película es obligatoria.',
-            'duracion.integer'  => 'La duración debe ser un número entero en minutos.',
-            'duracion.min'      => 'La duración debe ser mayor a 0 minutos.',
-
-            'genero.required'   => 'El género de la película es obligatorio.',
-            'genero.string'     => 'El género debe ser una cadena de texto.',
-            'genero.max'        => 'El género no debe superar los 100 caracteres.',
-
-            'idioma.required'   => 'El idioma es obligatorio.',
-            'idioma.string'     => 'El idioma debe ser un texto válido.',
-            'idioma.max'        => 'El idioma no debe superar los 255 caracteres.',
-            'idioma.in'         => 'El idioma seleccionado no es válido.',
-
-            'actores.required'  => 'Debe seleccionar al menos un actor.',
-            'actores.array'     => 'Los actores deben enviarse en un formato válido.',
-            'actores.*.exists'  => 'Alguno de los actores seleccionados no existe en la base de datos.'
-        ];
+            'nombre.required'        => __('messages.nombrepeliculareq'),
+            'nombre.string'          => __('messages.nombrepeliculastring'),
+            'nombre.max'             => __('messages.nombrepeliculamax'),
+        
+            'director.required'      => __('messages.directorreq'),
+            'director.string'        => __('messages.directorstring'),
+            'director.max'           => __('messages.directormax'),
+        
+            'fecha.required'         => __('messages.fechareq'),
+            'fecha.date'             => __('messages.fechadate'),
+        
+            'duracion.required'      => __('messages.duracionreq'),
+            'duracion.integer'       => __('messages.duracioninteger'),
+            'duracion.min'           => __('messages.duracionmin'),
+        
+            'genero.required'        => __('messages.generoreq'),
+            'genero.string'          => __('messages.generostring'),
+            'genero.max'             => __('messages.generomax'),
+        
+            'idioma.required'        => __('messages.idiomareq'),
+            'idioma.string'          => __('messages.idiomstring'),
+            'idioma.max'             => __('messages.idiomamax'),
+            'idioma.in'              => __('messages.idiomain'),
+        
+            'actores.required'       => __('messages.actoresreq'),
+            'actores.array'          => __('messages.actoresarray'),
+            'actores.*.exists'       => __('messages.actoresexists')
+        ];        
     }
 
     /**

@@ -49,4 +49,51 @@ return [
     'impjson'=> 'Importer à partir d\'un fichier JSON ',
     'impmovies'=> 'Importer Filmes',
     'confirmEdit' => 'Êtes-vous sûr de vouloir modifier ceci?',
+    'namereq'                => 'Le nom est requis.',
+    'namestring'             => 'Le nom doit être une chaîne de caractères.',
+    'namemax'                => 'Le nom ne doit pas dépasser 255 caractères.',
+
+    'edadreq'                => 'L\'âge est requis.',
+    'edadinteger'            => 'L\'âge doit être un nombre entier.',
+    'edadmin'                => 'L\'âge minimum autorisé est de 1 an.',
+    'edadmax'                => 'L\'âge maximum autorisé est de 125 ans.',
+
+    'fecha_nacimiento_req'   => 'La date de naissance est requise.',
+    'fecha_nacimiento_date'  => 'La date de naissance doit être une date valide.',
+
+    'paisreq'                => 'Le pays est requis.',
+    'paisstring'             => 'Le pays doit être une chaîne de caractères valide.',
+    'paismax'                => 'Le pays ne doit pas dépasser 255 caractères.',
+    'paisin'                 => 'Le pays sélectionné n\'est pas valide.',
+
+    'peliculasreq'           => 'Au moins un film doit être sélectionné.',
+    'peliculasarray'         => 'Les films doivent être envoyés dans un format valide.',
+    'peliculasexists'        => 'L\'un des films sélectionnés n\'existe pas dans la base de données.',
+    'nombrepeliculareq'      => 'Le nom du film est obligatoire.',
+    'nombrepeliculastring'   => 'Le nom doit être une chaîne de caractères.',
+    'nombrepeliculamax'      => 'Le nom ne doit pas dépasser 255 caractères.',
+
+    'directorreq'            => 'Le réalisateur est obligatoire.',
+    'directorstring'         => 'Le nom du réalisateur doit être une chaîne de caractères.',
+    'directormax'            => 'Le nom du réalisateur ne doit pas dépasser 255 caractères.',
+
+    'fechareq'               => 'La date de sortie est obligatoire.',
+    'fechadate'              => 'La date de sortie doit être une date valide.',
+
+    'duracionreq'            => 'La durée du film est obligatoire.',
+    'duracioninteger'        => 'La durée doit être un nombre entier en minutes.',
+    'duracionmin'            => 'La durée doit être supérieure à 0 minutes.',
+
+    'generoreq'              => 'Le genre du film est obligatoire.',
+    'generostring'           => 'Le genre doit être une chaîne de caractères.',
+    'generomax'              => 'Le genre ne doit pas dépasser 100 caractères.',
+
+    'idiomareq'              => 'La langue est obligatoire.',
+    'idiomstring'            => 'La langue doit être un texte valide.',
+    'idiomamax'              => 'La langue ne doit pas dépasser 255 caractères.',
+    'idiomain'               => 'La langue sélectionnée n\'est pas valide.',
+
+    'actoresreq'             => 'Au moins un acteur doit être sélectionné.',
+    'actoresarray'           => 'Les acteurs doivent être envoyés dans un format valide.',
+    'actoresexists'         => 'L\'un des acteurs sélectionnés n\'existe pas dans la base de données.',
 ];

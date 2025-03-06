@@ -37,27 +37,27 @@ class ActorRequest extends FormRequest
     public function messages()
     {
         return [
-            'nombre.required'           => 'El nombre del actor es obligatorio.',
-            'nombre.string'             => 'El nombre debe ser una cadena de texto.',
-            'nombre.max'                => 'El nombre no debe superar los 255 caracteres.',
-            
-            'edad.required'             => 'La edad es obligatoria.',
-            'edad.integer'              => 'La edad debe ser un número entero.',
-            'edad.min'                  => 'La edad mínima permitida es 1 año.',
-            'edad.max'                  => 'La edad máxima permitida es 125 años.',
-
-            'fecha_nacimiento.required' => 'La fecha de nacimiento es obligatoria.',
-            'fecha_nacimiento.date'     => 'La fecha de nacimiento debe ser una fecha válida.',
-            
-            'pais.required'             => 'El país es obligatorio.',
-            'pais.string'               => 'El país debe ser un texto válido.',
-            'pais.max'                  => 'El país no debe superar los 255 caracteres.',
-            'pais.in'                   => 'El país seleccionado no es válido.',
-
-            'peliculas.required'        => 'Debe seleccionar al menos una película.',
-            'peliculas.array'           => 'Las películas deben enviarse en un formato válido.',
-            'peliculas.*.exists'        => 'Alguna de las películas seleccionadas no existe en la base de datos.'
-        ];
+            'nombre.required'           => __('messages.namereq'),
+            'nombre.string'             => __('messages.namestring'),
+            'nombre.max'                => __('messages.namemax'),
+        
+            'edad.required'             => __('messages.edadreq'),
+            'edad.integer'              => __('messages.edadinteger'),
+            'edad.min'                  => __('messages.edadmin'),
+            'edad.max'                  => __('messages.edadmax'),
+        
+            'fecha_nacimiento.required' => __('messages.fecha_nacimiento_req'),
+            'fecha_nacimiento.date'     => __('messages.fecha_nacimiento_date'),
+        
+            'pais.required'             => __('messages.paisreq'),
+            'pais.string'               => __('messages.paisstring'),
+            'pais.max'                  => __('messages.paismax'),
+            'pais.in'                   => __('messages.paisin'),
+        
+            'peliculas.required'        => __('messages.peliculasreq'),
+            'peliculas.array'           => __('messages.peliculasarray'),
+            'peliculas.*.exists'        => __('messages.peliculasexists')
+        ];        
     }
 
     /**
