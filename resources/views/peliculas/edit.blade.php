@@ -209,7 +209,8 @@
                 <button type="button" id="addActor" class="btn btn-primary mt-2">{{ __('messages.addactor') }}</button>
 
 
-                <button type="submit">{{ __('messages.savechanges') }}</button>
+                <button type="submit" onclick="return confirm('{{ __('messages.confirmEdit') }}')">{{ __('messages.savechanges') }}</button>
+
                 <a href="{{ route('peliculas.index') }}">{{ __('messages.cancel') }}</a>
             </form>
         </div>

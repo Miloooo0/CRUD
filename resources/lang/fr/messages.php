@@ -48,4 +48,5 @@ return [
     'impactors'=> 'Importer Acteurs',
     'impjson'=> 'Importer à partir d\'un fichier JSON ',
     'impmovies'=> 'Importer Filmes',
+    'confirmEdit' => 'Êtes-vous sûr de vouloir modifier ceci?',
 ];

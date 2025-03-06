@@ -114,6 +114,4 @@
             </button>
         </div>
     </body>
-    <x-global-components.footer/>
-
 </html>

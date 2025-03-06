@@ -196,7 +196,8 @@
         <!-- Botón para agregar un nuevo select -->
         <button type="button" id="addPelicula">{{ __('messages.addfilm') }}</button>
 
-        <button type="submit">{{ __('messages.savechanges') }}</button>
+        <button type="submit" onclick="return confirm('{{ __('messages.confirmEdit') }}')">{{ __('messages.savechanges') }}</button>
+        
         <a href="{{ route('actores.index') }}">{{ __('messages.cancel') }}</a>
     </form>
         </div>

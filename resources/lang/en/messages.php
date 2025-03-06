@@ -50,4 +50,5 @@ return [
     'impmovies'=> 'Import movies',
     'email' => 'Email',
     'password' => 'Password',
+    'confirmEdit' => 'Are you sure you want to edit this?',
 ];

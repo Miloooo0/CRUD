@@ -50,4 +50,5 @@ return [
     'impmovies'=> 'Importar Peliculas',
     'email' => 'Correo electrónico',
     'password' => 'Contraseña',
+    'confirmEdit' => 'Estás seguro de que quieres realizar los cambios?',
 ];
