@@ -11,32 +11,22 @@ class ActorFactory extends Factory
 
     public function definition(): array
     {
+        $actores = [
+            'Leonardo DiCaprio', 'Meryl Streep', 'Robert De Niro', 'Scarlett Johansson', 
+            'Tom Hanks', 'Natalie Portman', 'Morgan Freeman', 'Angelina Jolie',
+            'Johnny Depp', 'Brad Pitt', 'Denzel Washington', 'Jennifer Lawrence',
+            'Will Smith', 'Nicole Kidman', 'Al Pacino', 'Julia Roberts',
+            'Harrison Ford', 'Charlize Theron', 'Keanu Reeves', 'Anne Hathaway',
+            'Samuel L. Jackson', 'Emma Stone', 'Benedict Cumberbatch', 'Cate Blanchett',
+            'Christian Bale', 'Hugh Jackman', 'Joaquin Phoenix', 'Sandra Bullock',
+            'Chris Hemsworth', 'Matt Damon', 'Javier Bardem', 'Penélope Cruz'
+        ];
+
         return [
-            'nombre' => $this->faker->name(), 
-            'edad' => $this->faker->numberBetween(1, 125), 
-            'fecha_nacimiento' => $this->faker->dateTimeBetween('-125 years', 'now')->format('Y-m-d'), 
-            'pais' => $this->faker->randomElement([
-                'Afganistán', 'Albania', 'Alemania', 'Andorra', 'Angola', 'Antigua y Barbuda', 'Arabia Saudita', 'Argelia', 'Argentina', 
-                'Armenia', 'Australia', 'Austria', 'Azerbaiyán', 'Bahamas', 'Bangladés', 'Barbados', 'Baréin', 'Bélgica', 'Belice', 
-                'Benín', 'Bielorrusia', 'Birmania', 'Bolivia', 'Bosnia y Herzegovina', 'Botsuana', 'Brasil', 'Brunéi', 'Bulgaria', 
-                'Burkina Faso', 'Burundi', 'Bután', 'Cabo Verde', 'Camboya', 'Camerún', 'Canadá', 'Catar', 'Chad', 'Chile', 'China', 
-                'Chipre', 'Colombia', 'Comoras', 'Corea del Norte', 'Corea del Sur', 'Costa de Marfil', 'Costa Rica', 'Croacia', 'Cuba', 
-                'Dinamarca', 'Dominica', 'Ecuador', 'Egipto', 'El Salvador', 'Emiratos Árabes Unidos', 'Eritrea', 'Eslovaquia', 'Eslovenia', 
-                'España', 'Estados Unidos', 'Estonia', 'Esuatini', 'Etiopía', 'Filipinas', 'Finlandia', 'Fiyi', 'Francia', 'Gabón', 'Gambia', 
-                'Georgia', 'Ghana', 'Granada', 'Grecia', 'Guatemala', 'Guyana', 'Guinea', 'Guinea-Bisáu', 'Guinea Ecuatorial', 'Haití', 
-                'Honduras', 'Hungría', 'India', 'Indonesia', 'Irak', 'Irán', 'Irlanda', 'Islandia', 'Islas Marshall', 'Islas Salomón', 
-                'Israel', 'Italia', 'Jamaica', 'Japón', 'Jordania', 'Kazajistán', 'Kenia', 'Kirguistán', 'Kiribati', 'Kuwait', 'Laos', 
-                'Lesoto', 'Letonia', 'Líbano', 'Liberia', 'Libia', 'Liechtenstein', 'Lituania', 'Luxemburgo', 'Madagascar', 'Malasia', 
-                'Malaui', 'Maldivas', 'Malí', 'Malta', 'Marruecos', 'Mauricio', 'Mauritania', 'México', 'Micronesia', 'Moldavia', 'Mónaco', 
-                'Mongolia', 'Montenegro', 'Mozambique', 'Namibia', 'Nauru', 'Nepal', 'Nicaragua', 'Níger', 'Nigeria', 'Noruega', 'Nueva Zelanda', 
-                'Omán', 'Países Bajos', 'Pakistán', 'Palaos', 'Palestina', 'Panamá', 'Papúa Nueva Guinea', 'Paraguay', 'Perú', 'Polonia', 
-                'Portugal', 'Reino Unido', 'República Centroafricana', 'República Checa', 'República del Congo', 'República Democrática del Congo', 
-                'República Dominicana', 'Ruanda', 'Rumania', 'Rusia', 'Samoa', 'San Cristóbal y Nieves', 'San Marino', 'San Vicente y las Granadinas', 
-                'Santa Lucía', 'Santo Tomé y Príncipe', 'Senegal', 'Serbia', 'Seychelles', 'Sierra Leona', 'Singapur', 'Siria', 'Somalia', 
-                'Sri Lanka', 'Sudáfrica', 'Sudán', 'Sudán del Sur', 'Suecia', 'Suiza', 'Surinam', 'Tailandia', 'Tanzania', 'Tayikistán', 
-                'Timor Oriental', 'Togo', 'Tonga', 'Trinidad y Tobago', 'Túnez', 'Turkmenistán', 'Turquía', 'Tuvalu', 'Ucrania', 'Uganda', 
-                'Uruguay', 'Uzbekistán', 'Vanuatu', 'Vaticano', 'Venezuela', 'Vietnam', 'Yemen', 'Yibuti', 'Zambia', 'Zimbabue'
-            ]), 
+            'nombre' => $this->faker->randomElement($actores), // Elegir un actor real de la lista
+            'edad' => $this->faker->numberBetween(30, 90), // Edad más realista para actores
+            'fecha_nacimiento' => $this->faker->dateTimeBetween('-90 years', '-30 years')->format('Y-m-d'), 
+            'pais' => $this->faker->randomElement(['Estados Unidos', 'Reino Unido', 'España', 'Francia', 'Alemania', 'México', 'Italia'])
         ];
     }
 }

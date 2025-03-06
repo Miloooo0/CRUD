@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Route;
 
 
 class AppServiceProvider extends ServiceProvider
@@ -27,5 +28,10 @@ class AppServiceProvider extends ServiceProvider
         if (Session::has('locale')) {
             App::setLocale(Session::get('locale'));
         }
+        //USO DE LAS APIS
+        Route::middleware('api')
+        ->prefix('api')
+        ->group(base_path('routes/api.php'));
+
     }
 }

@@ -6,18 +6,17 @@ use App\Http\Controllers\PeliculaController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\ActorController;
 
-
-
+//IDIOMAS
 Route::get("language/{locale}", LanguageController::class)->name('language');
 
+//HOME
 Route::get('/', function () {
     return view('index');
 })->name('index');
 
+//JSON
 Route::post('/actores/import', [ActorController::class, 'import'])->name('actores.import');
 Route::post('/peliculas/import', [PeliculaController::class, 'import'])->name('peliculas.import');
-
-
 
 Route::resource('peliculas', PeliculaController::class);
 

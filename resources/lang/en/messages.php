@@ -48,4 +48,6 @@ return [
     'impactors'=> 'Import actors',
     'impjson'=> 'Import from a JSON file',
     'impmovies'=> 'Import movies',
+    'email' => 'Email',
+    'password' => 'Password',
 ];

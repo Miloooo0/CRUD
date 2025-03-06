@@ -45,4 +45,9 @@ return [
     'es' => 'Español',
     'en' => 'Inglés',
     'fr' => 'Francés',
+    'impactors'=> 'Importar Actores',
+    'impjson'=> 'Importar desde un archivo JSON',
+    'impmovies'=> 'Importar Peliculas',
+    'email' => 'Correo electrónico',
+    'password' => 'Contraseña',
 ];
