@@ -145,33 +145,33 @@
                 @method('PUT')
                 <div class="coolinput">
                     <label class="text" for="nombre">{{ __('messages.titulo') }}</label>
-                    <input type="text" id="nombre" class="input" name="nombre" value="{{ old('nombre', $pelicula->nombre) }}" required>
+                    <input type="text" id="nombre" class="input" name="nombre" value="{{ old('nombre', $pelicula->nombre) }}">
                 </div>
 
                 <div class="coolinput">
                     <label class="text" for="director">{{ __('messages.director') }}</label>
-                    <input type="text" id="director" class="input" name="director" value="{{ old('director', $pelicula->director) }}" required>
+                    <input type="text" id="director" class="input" name="director" value="{{ old('director', $pelicula->director) }}">
                 </div>
 
                 <div class="coolinput">
                     <label class="text" for="fecha">{{ __('messages.reldate') }}</label>
-                    <input type="date" id="fecha" class="input" name="fecha" value="{{ old('fecha', $pelicula->fecha) }}" required>
+                    <input type="date" id="fecha" class="input" name="fecha" value="{{ old('fecha', $pelicula->fecha) }}">
                 </div>
 
                 <div class="coolinput">
                     <label class="text" for="duracion">{{ __('messages.length') }}</label>
-                    <input type="text" id="duracion" class="input" name="duracion" value="{{ old('duracion', $pelicula->duracion) }}" required>
+                    <input type="text" id="duracion" class="input" name="duracion" value="{{ old('duracion', $pelicula->duracion) }}">
                 </div>
 
                 <div class="coolinput">
                     <label class="text" for="genero">{{ __('messages.genre') }}</label>
-                    <input type="text" id="genero" class="input" name="genero" value="{{ old('genero', $pelicula->genero) }}" required>
+                    <input type="text" id="genero" class="input" name="genero" value="{{ old('genero', $pelicula->genero) }}">
                 </div>
 
 
                 <div class="coolinput">
                     <label class="text" for="idioma">{{ __('messages.country') }}</label>
-                    <input type="text" id="idioma" class="input" name="idioma" value="{{ old('idioma', $pelicula->idioma) }}" require>
+                    <input type="text" id="idioma" class="input" name="idioma" value="{{ old('idioma', $pelicula->idioma) }}">
                 </div>
 
                 <!-- Contenedor donde se agregarán los selects -->
@@ -180,7 +180,7 @@
                         <!-- Si la película ya tiene actores asignados, se crean selects con sus valores -->
                         @foreach($pelicula->actores as $selectedActor)
                             <div class="actor-select d-flex align-items-center mb-2">
-                                <select name="actores[]" class="form-control" required>
+                                <select name="actores[]" class="form-control">
                                     <option value="">{{ __('messages.actorselect') }}</option>
                                     @foreach($actores as $actor)
                                         <option value="{{ $actor->id }}" {{ $actor->id == $selectedActor->id ? 'selected' : '' }}>
@@ -194,7 +194,7 @@
                     @else
                         <!-- Si es una nueva película, muestra un solo select vacío -->
                         <div class="actor-select d-flex align-items-center mb-2">
-                            <select name="actores[]" class="form-control input" required>
+                            <select name="actores[]" class="form-control input">
                                 <option value="">{{ __('messages.actorselect') }}</option>
                                 @foreach($actores as $actor)
                                     <option value="{{ $actor->id }}">{{ $actor->nombre }}</option>

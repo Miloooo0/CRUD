@@ -145,29 +145,29 @@
 
         <div class="coolinput">
             <label class="text" for="nombre">{{ __('messages.name') }}</label>
-            <input type="text" id="nombre" class="input" name="nombre" value="{{ old('nombre') }}" required>
+            <input type="text" id="nombre" class="input" name="nombre" value="{{ old('nombre') }}">
         </div>
 
         <div class="coolinput">
             <label class="text" for="edad">{{ __('messages.age') }}</label>
-            <input type="text" id="edad" class="input" name="edad" value="{{ old('edad') }}" required>
+            <input type="text" id="edad" class="input" name="edad" value="{{ old('edad') }}">
         </div>
 
         <div class="coolinput">
             <label class="text" for="fecha_nacimiento">{{ __('messages.birthdate') }}</label>
-            <input type="date" id="fecha_nacimiento" class="input" name="fecha_nacimiento" value="{{ old('fecha_nacimiento') }}" required>
+            <input type="date" id="fecha_nacimiento" class="input" name="fecha_nacimiento" value="{{ old('fecha_nacimiento') }}">
         </div>
 
         <div class="coolinput">
             <label class="text" for="pais">{{ __('messages.country') }}</label>
-            <input type="text" id="pais" class="input" name="pais" value="{{ old('pais') }}" required>
+            <input type="text" id="pais" class="input" name="pais" value="{{ old('pais') }}">
         </div>
 
          <!-- Contenedor donde se agregarán los selects de películas -->
          <div id="peliculaSelectContainer" class="coolinput">
 
                 <div class="pelicula-select">
-                    <select name="peliculas[]" class="input" required>
+                    <select name="peliculas[]" class="input">
                         <option value="">{{ __('messages.selectfilm') }}</option>
                         @foreach($peliculas as $pelicula)
                             <option value="{{ $pelicula->id }}">{{ $pelicula->nombre }}</option>

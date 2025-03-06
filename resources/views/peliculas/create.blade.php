@@ -145,33 +145,33 @@
                 
                 <div class="coolinput">
                     <label class="text" for="nombre">{{ __('messages.titulo') }}</label>
-                    <input type="text" id="nombre" class="input" name="nombre" value="{{ old('nombre') }}" required>
+                    <input type="text" id="nombre" class="input" name="nombre" value="{{ old('nombre') }}">
                 </div>
 
                 <div class="coolinput">
                     <label class="text" for="director">{{ __('messages.director') }}</label>
-                    <input type="text" id="director" class="input" name="director" value="{{ old('director') }}" required>
+                    <input type="text" id="director" class="input" name="director" value="{{ old('director') }}">
                 </div>
 
                 <div class="coolinput">
                     <label class="text" for="fecha">{{ __('messages.reldate') }}</label>
-                    <input type="date" id="fecha" class="input" name="fecha" value="{{ old('fecha') }}" required>
+                    <input type="date" id="fecha" class="input" name="fecha" value="{{ old('fecha') }}">
                 </div>
 
                 <div class="coolinput">
                     <label class="text" for="duracion">{{ __('messages.length') }}</label>
-                    <input type="text" id="duracion" class="input" name="duracion" value="{{ old('duracion') }}" required>
+                    <input type="text" id="duracion" class="input" name="duracion" value="{{ old('duracion') }}">
                 </div>
 
                 <div class="coolinput">
                     <label class="text" for="genero">{{ __('messages.genre') }}</label>
-                    <input type="text" id="genero" class="input" name="genero" value="{{ old('genero') }}" required>
+                    <input type="text" id="genero" class="input" name="genero" value="{{ old('genero') }}">
                 </div>
 
 
                 <div class="coolinput">
                     <label class="text" for="idioma">{{ __('messages.country') }}</label>
-                    <input type="text" id="idioma" class="input" name="idioma" value="{{ old('idioma') }}" require>
+                    <input type="text" id="idioma" class="input" name="idioma" value="{{ old('idioma') }}">
                 </div>
 
                 <!-- Contenedor donde se agregarán los selects -->
@@ -180,7 +180,7 @@
                         <!-- Si la película ya tiene actores asignados, se crean selects con sus valores -->
                         @foreach($pelicula->actores as $selectedActor)
                             <div class="actor-select d-flex align-items-center mb-2">
-                                <select name="actores[]" class="form-control" required>
+                                <select name="actores[]" class="form-control">
                                     <option value="">{{ __('messages.actorselect') }}</option>
                                     @foreach($actores as $actor)
                                         <option value="{{ $actor->id }}" {{ $actor->id == $selectedActor->id ? 'selected' : '' }}>
@@ -194,7 +194,7 @@
                     @else
                         <!-- Si es una nueva película, muestra un solo select vacío -->
                         <div class="actor-select d-flex align-items-center mb-2">
-                            <select name="actores[]" class="form-control input" required>
+                            <select name="actores[]" class="form-control input">
                                 <option value="">{{ __('messages.actorselect') }}</option>
                                 @foreach($actores as $actor)
                                     <option value="{{ $actor->id }}">{{ $actor->nombre }}</option>
